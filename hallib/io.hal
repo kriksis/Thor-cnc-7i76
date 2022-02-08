@@ -44,20 +44,13 @@
 #net neg-lim-z     <=  hm2_7i76e.0.7i76.0.0.input-15-not
 # DI 16
 # DI 17
-# Mapping input from a toggle button at Z axis to DI 17
-#net atc_manual_toogle_button     <=  hm2_7i76e.0.7i76.0.0.input-17
 # DI 18
 # DI 19
-# DI 20
-net x_alarm => joint.0.amp-fault-in <= hm2_7i76e.0.7i76.0.0.input-20
-# DI 21
-net y_alarm => joint.1.amp-fault-in <= hm2_7i76e.0.7i76.0.0.input-21
-# DI 22
-net y2_alarm => joint.2.amp-fault-in <= hm2_7i76e.0.7i76.0.0.input-22
-# DI 23
-net z_alarm => joint.3.amp-fault-in <= hm2_7i76e.0.7i76.0.0.input-23
-# DI 24
-net atc_manual_toogle_button <= hm2_7i76e.0.7i76.0.0.input-24
+net x_alarm => joint.0.amp-fault-in <= hm2_7i76e.0.7i76.0.0.input-20    # DI 20
+net y_alarm => joint.1.amp-fault-in <= hm2_7i76e.0.7i76.0.0.input-21    # DI 21
+net y2_alarm => joint.2.amp-fault-in <= hm2_7i76e.0.7i76.0.0.input-22   # DI 22
+net z_alarm => joint.3.amp-fault-in <= hm2_7i76e.0.7i76.0.0.input-23    # DI 23
+net atc_manual_toogle_button <= hm2_7i76e.0.7i76.0.0.input-24           # DI 24
 # --- AIR PRESSURE SENSOR 6 bar ---
 # Mapping Festo 527467 sensor in 6bar airline to input 16 (high when ok; invert to deal with message)
 #net airpressure    <=  hm2_7i76e.0.7i76.0.0.input-24-not
@@ -78,53 +71,18 @@ net atc_manual_toogle_button <= hm2_7i76e.0.7i76.0.0.input-24
 #  IO - OUTPUTS 
 
 # DO 00
-# Start spindle water pump
-#net cooling_enable   =>  hm2_7i76e.0.7i76.0.0.output-00
-# DO 01
-#addf or.coolant servo-thread
-#net coolant-flood or.coolant.in0 
-#net coolant-mist or.coolant.in1
-#net ortriggerpump or.coolant.out =>  hm2_7i76e.0.7i76.0.0.output-01 
+# DO 01 
 # DO 02
 # DO 03
-# Maps Valve for spindle ATC bar: depressurize = clamp
-# 5/3 valve with NC default position
-# valve exit 4 (top)
-# when high this valve is open 
-# normal condition = drawbar closed ==> this pin = high
-#  signal drawbar_open is defined as: when high ==> OPEN
-# This means that this pin gets the default signal of drawbar_open which is LOW
-#net drawbar_open_inv hm2_7i76e.0.7i76.0.0.output-03
-# DO 04 Test water pump
-# Maps Valve for spindle ATC bar: pressurize = release
-# valve exit 2 (bottom)
-# when high this valve is open 
-# normal condition = drawbar closed ==> this pin = low
-#  signal drawbar_open is defined as: when high ==> OPEN
-# This means that this pin gets the inverted signal of drawbar_open (drawbar_open_inv) which is HIGH
-#net drawbar_open  hm2_7i76e.0.7i76.0.0.output-04
-# AT Drawbar operation
-# to OPEN the drawbar (release tool):  drawbar_open = high __> valve exit 2/output 4 = high, exit 4/output 3 = low
-# to LOCK the drawbardefault state (clamp tool): drawbar_open = low __> valve exit 2/output 4= low, exit 4/output 3 = high
+# DO 04
 # DO 05
-# Maps Valve for ATC cone cleaning 3/2 valve, on/off High = valve open
-# air can only get thorugh the cone when the drawbar is open, we can therefore use the some signal drawbar_open to actuate this pin
-# default state of this pin is LOW which is == drawbar_open
-#net drawbar_open hm2_7i76e.0.7i76.0.0.output-05
 # DO 06
 # DO 07
-# DO 08
-# Maps 3/2 way valve 3/2-1 - used for sealair at spindle
-# Automatically start sealair when spindle is running
-#net dustsealair => hm2_7i76e.0.7i76.0.0.output-08
-# DO 09
-# DO 10
-# DO 11
-net atc_manual_toogle_button => hm2_7i76e.0.7i76.0.0.output-11
-# DO 12 Water pump
-net machine-is-enabled => hm2_7i76e.0.7i76.0.0.output-12
-# Maps Valve 3 to In8
-#net cleantoollenghtsensor hm2_7i76e.0.7i76.0.0.output-12 motion.digital-out-00 
+net coolant => hm2_7i76e.0.7i76.0.0.output-08               # DO 08 - Flood / Mist Air Valve
+net spindle-enable-ok => hm2_7i76e.0.7i76.0.0.output-09     # DO 09 - Air Sealed 
+net atc_air_return => hm2_7i76e.0.7i76.0.0.output-10        # DO 10 - Air Return
+net atc_drawbar_loose => hm2_7i76e.0.7i76.0.0.output-11     # DO 11 - Air Inlet + Dust Removal Valve
+net spindle-enable => hm2_7i76e.0.7i76.0.0.output-12        # DO 12 - Water pump
 # DO 13
 # DO 14
 # DO 15

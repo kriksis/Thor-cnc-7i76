@@ -24,9 +24,10 @@ net jog.0.cont-minus vc-p4s.jog.0.minus => halui.axis.x.minus halui.joint.0.minu
 net jog.1.cont-plus  vc-p4s.jog.1.plus  => halui.axis.y.plus  halui.joint.1.plus
 net jog.1.cont-minus vc-p4s.jog.1.minus => halui.axis.y.minus halui.joint.1.minus
 net jog.2.cont-plus  vc-p4s.jog.2.plus  => halui.axis.z.plus halui.joint.2.plus
-net jog.2.cont-mimus vc-p4s.jog.2.minus => halui.axis.z.minus halui.joint.2.minus
+net jog.2.cont-minus vc-p4s.jog.2.minus => halui.axis.z.minus halui.joint.2.minus
 net jog-speed vc-p4s.jog.velocity => halui.axis.jog-speed halui.joint.jog-speed
-net motion-in-position motion.in-position => vc-p4s.is-moving
+#net motion-in-position motion.in-position => vc-p4s.is-moving
+net in-position => vc-p4s.is-moving
 setp axis_0_max_velocity [JOINT_0]MAX_VELOCITY
 setp axis_1_max_velocity [JOINT_1]MAX_VELOCITY
 setp axis_2_max_velocity [JOINT_2]MAX_VELOCITY
@@ -109,26 +110,26 @@ net spindle.start  vc-p4s.spindle.start  => halui.spindle.0.start
 net spindle.stop  vc-p4s.spindle.stop  => halui.spindle.0.stop
 
 # 13---E-STOP
-#net estop vc-p4s.estop.activate => halui.estop.activate
-#net reset vc-p4s.estop.reset => halui.estop.reset
-#net estop-is-activated halui.estop.is-activated => vc-p4s.estop.is-activated
+net estop vc-p4s.estop.activate => halui.estop.activate
+net reset vc-p4s.estop.reset => halui.estop.reset
+net estop-is-activated halui.estop.is-activated => vc-p4s.estop.is-activated
 
 # 14---MACHINE
 net machine-on  vc-p4s.machine.on  => halui.machine.on
 net machine-off vc-p4s.machine.off => halui.machine.off
-net machine-ison halui.machine.is-on => vc-p4s.machine.ison
+#net machine-ison halui.machine.is-on => vc-p4s.machine.ison
 
 ##### P4-S PENDANT SETTINGS #####
 
 # 15---STEP SIZE, SET 0 TO SKIP
-setp stepsize-1 	0.0001
+setp stepsize-1 	1
 
 # DEFAULT
-setp stepsize-2 	0.001
+setp stepsize-2 	5
 
-setp stepsize-3 	0.01
+setp stepsize-3 	10
 setp stepsize-4 	0.1
-setp stepsize-5 	1
+setp stepsize-5 	0
 setp stepsize-6 	0
 setp stepsize-7 	0
 setp stepsize-8 	0
