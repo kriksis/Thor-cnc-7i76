@@ -1,0 +1,3 @@
+addf toogle_manualatc servo-thread
+net toggle_lut5_manualatctoggle lut5.manualatctoggle.out <= toogle_manualatc.in
+net signal_toogle_manualatc toogle_manualatc.out
