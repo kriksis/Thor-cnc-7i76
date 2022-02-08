@@ -1,3 +1,4 @@
-addf toogle_manualatc servo-thread
-net toggle_lut5_manualatctoggle lut5.manualatctoggle.out <= toogle_manualatc.in
-net signal_toogle_manualatc toogle_manualatc.out
+#Toggle on/off manual button
+addf toggle.0 servo-thread
+net atc_manual_toogle_button toggle.0.in <= hm2_7i76e.0.7i76.0.0.input-24
+net atc_manual_toogle_button toggle.0.out => hm2_7i76e.0.7i76.0.0.output-11

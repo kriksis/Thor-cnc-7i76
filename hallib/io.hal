@@ -7,15 +7,10 @@
 # AI 02
 # AI 03
 # DI 04
-net x_alarm => joint.0.amp-fault-in <= hm2_7i76e.0.7i76.0.0.input-20
 # DI 05
-net y_alarm => joint.1.amp-fault-in <= hm2_7i76e.0.7i76.0.0.input-21
 # DI 06
-net y2_alarm => joint.2.amp-fault-in <= hm2_7i76e.0.7i76.0.0.input-22
 # DI 07
-net z_alarm => joint.3.amp-fault-in <= hm2_7i76e.0.7i76.0.0.input-23
 # DI 05
-net atc_manual_toogle_button <= hm2_7i76e.0.7i76.0.0.input-24
 # DI 06
 # DI 07
 # DI 08
@@ -54,16 +49,15 @@ net atc_manual_toogle_button <= hm2_7i76e.0.7i76.0.0.input-24
 # DI 18
 # DI 19
 # DI 20
+net x_alarm => joint.0.amp-fault-in <= hm2_7i76e.0.7i76.0.0.input-20
 # DI 21
-# Connect JMC IHSV/IHSS alarm signal X
-#net servoalarm1   <=  hm2_7i76e.0.7i76.0.0.input-21
+net y_alarm => joint.1.amp-fault-in <= hm2_7i76e.0.7i76.0.0.input-21
 # DI 22
-# Connect JMC IHSV/IHSS alarm signal Y
-#net servoalarm2   <=  hm2_7i76e.0.7i76.0.0.input-22
+net y2_alarm => joint.2.amp-fault-in <= hm2_7i76e.0.7i76.0.0.input-22
 # DI 23
-# Connect JMC IHSV/IHSS alarm signal Z
-#net servoalarm3   <=  hm2_7i76e.0.7i76.0.0.input-23
+net z_alarm => joint.3.amp-fault-in <= hm2_7i76e.0.7i76.0.0.input-23
 # DI 24
+net atc_manual_toogle_button <= hm2_7i76e.0.7i76.0.0.input-24
 # --- AIR PRESSURE SENSOR 6 bar ---
 # Mapping Festo 527467 sensor in 6bar airline to input 16 (high when ok; invert to deal with message)
 #net airpressure    <=  hm2_7i76e.0.7i76.0.0.input-24-not
@@ -102,9 +96,6 @@ net atc_manual_toogle_button <= hm2_7i76e.0.7i76.0.0.input-24
 # This means that this pin gets the default signal of drawbar_open which is LOW
 #net drawbar_open_inv hm2_7i76e.0.7i76.0.0.output-03
 # DO 04 Test water pump
-net machine-is-enabled => hm2_7i76e.0.7i76.0.0.output-12
-
-net atc_manual_toogle_button => hm2_7i76e.0.7i76.0.0.output-11
 # Maps Valve for spindle ATC bar: pressurize = release
 # valve exit 2 (bottom)
 # when high this valve is open 
@@ -129,7 +120,9 @@ net atc_manual_toogle_button => hm2_7i76e.0.7i76.0.0.output-11
 # DO 09
 # DO 10
 # DO 11
-# DO 12
+net atc_manual_toogle_button => hm2_7i76e.0.7i76.0.0.output-11
+# DO 12 Water pump
+net machine-is-enabled => hm2_7i76e.0.7i76.0.0.output-12
 # Maps Valve 3 to In8
 #net cleantoollenghtsensor hm2_7i76e.0.7i76.0.0.output-12 motion.digital-out-00 
 # DO 13
