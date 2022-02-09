@@ -107,7 +107,7 @@ net z-go-to-zero vc-p4s.z-go-to-zero  => halui.mdi-command-10
 # 12---SPINDLE
 net spindle.is-on halui.spindle.0.is-on =>  vc-p4s.spindle.is-on
 net spindle.start  vc-p4s.spindle.start  => halui.spindle.0.start
-net spindle.stop  vc-p4s.spindle.stop  => halui.spindle.0.stop
+#net spindle.stop  vc-p4s.spindle.stop  => halui.spindle.0.stop
 
 # 13---E-STOP
 net estop vc-p4s.estop.activate => halui.estop.activate

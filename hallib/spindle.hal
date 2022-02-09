@@ -34,6 +34,14 @@ net spindle-at-speed           =>  spindle.0.at-speed
 net spindle-vel-fb-rps         =>  spindle.0.speed-in
 net spindle-index-enable      <=>  spindle.0.index-enable
 
+setp   hm2_7i76e.0.7i76.0.0.spinout-minlim    [SPINDLE_0]OUTPUT_MIN_LIMIT
+setp   hm2_7i76e.0.7i76.0.0.spinout-maxlim    [SPINDLE_0]OUTPUT_MAX_LIMIT
+setp   hm2_7i76e.0.7i76.0.0.spinout-scalemax  [SPINDLE_0]OUTPUT_SCALE
+
+net spindle-output      => hm2_7i76e.0.7i76.0.0.spinout
+net spindle-enable      => hm2_7i76e.0.7i76.0.0.spinena
+net spindle-ccw         => hm2_7i76e.0.7i76.0.0.spindir
+
 # ---Setup spindle at speed signals---
 
 sets spindle-at-speed true
