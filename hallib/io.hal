@@ -6,7 +6,10 @@
 # AI 01
 # AI 02
 # AI 03
-# DI 04
+net home-x <= hm2_7i76e.0.7i76.0.0.input-04-not  # DI-04
+net home-y <= hm2_7i76e.0.7i76.0.0.input-05-not  # DI-05
+net home-y2 <= hm2_7i76e.0.7i76.0.0.input-06-not # DI-06
+net home-z <= hm2_7i76e.0.7i76.0.0.input-07-not  # DI-07
 # DI 05
 # DI 06
 # DI 07
@@ -31,26 +34,17 @@
 
 # DI 12
 # DI 13
-# --- HOME-X ---
-#net min-home-x     <=  hm2_7i76e.0.7i76.0.0.input-13
-#net neg-lim-x     <=  hm2_7i76e.0.7i76.0.0.input-13-not
 # DI 14
-# --- HOME-Y ---
-#net min-home-y     <=  hm2_7i76e.0.7i76.0.0.input-14
-#net neg-lim-y     <=  hm2_7i76e.0.7i76.0.0.input-14-not
 # DI 15
-# --- HOME-Z ---
-#net min-home-z     <=  hm2_7i76e.0.7i76.0.0.input-15
-#net neg-lim-z     <=  hm2_7i76e.0.7i76.0.0.input-15-not
 # DI 16
 # DI 17
 # DI 18
 # DI 19
-net x_alarm => joint.0.amp-fault-in <= hm2_7i76e.0.7i76.0.0.input-20    # DI 20
-net y_alarm => joint.1.amp-fault-in <= hm2_7i76e.0.7i76.0.0.input-21    # DI 21
-net y2_alarm => joint.2.amp-fault-in <= hm2_7i76e.0.7i76.0.0.input-22   # DI 22
-net z_alarm => joint.3.amp-fault-in <= hm2_7i76e.0.7i76.0.0.input-23    # DI 23
-net atc_manual_toogle_button <= hm2_7i76e.0.7i76.0.0.input-24           # DI 24
+net x_alarm => joint.0.amp-fault-in <= hm2_7i76e.0.7i76.0.0.input-20  # DI 20
+net y_alarm => joint.1.amp-fault-in <= hm2_7i76e.0.7i76.0.0.input-21  # DI 21
+net y2_alarm => joint.2.amp-fault-in <= hm2_7i76e.0.7i76.0.0.input-22 # DI 22
+net z_alarm => joint.3.amp-fault-in <= hm2_7i76e.0.7i76.0.0.input-23  # DI 23
+net atc_manual_toogle_button <= hm2_7i76e.0.7i76.0.0.input-24         # DI 24
 # --- AIR PRESSURE SENSOR 6 bar ---
 # Mapping Festo 527467 sensor in 6bar airline to input 16 (high when ok; invert to deal with message)
 #net airpressure    <=  hm2_7i76e.0.7i76.0.0.input-24-not
@@ -78,11 +72,11 @@ net atc_manual_toogle_button <= hm2_7i76e.0.7i76.0.0.input-24           # DI 24
 # DO 05
 # DO 06
 # DO 07
-net coolant => hm2_7i76e.0.7i76.0.0.output-08               # DO 08 - Flood / Mist Air Valve
-net spindle-enable-ok => hm2_7i76e.0.7i76.0.0.output-09     # DO 09 - Air Sealed 
-net atc_air_return => hm2_7i76e.0.7i76.0.0.output-10        # DO 10 - Air Return
-net atc_drawbar_loose => hm2_7i76e.0.7i76.0.0.output-11     # DO 11 - Air Inlet + Dust Removal Valve
-net spindle-enable => hm2_7i76e.0.7i76.0.0.output-12        # DO 12 - Water pump
+net coolant => hm2_7i76e.0.7i76.0.0.output-08            # DO 08 - Flood / Mist Air Valve
+net spindle-enable-ok => hm2_7i76e.0.7i76.0.0.output-09  # DO 09 - Air Sealed 
+net atc_air_return => hm2_7i76e.0.7i76.0.0.output-10     # DO 10 - Air Return
+net atc_drawbar_loose => hm2_7i76e.0.7i76.0.0.output-11  # DO 11 - Air Inlet + Dust Removal Valve
+net spindle-enable => hm2_7i76e.0.7i76.0.0.output-12     # DO 12 - Water pump
 # DO 13
 # DO 14
 # DO 15
