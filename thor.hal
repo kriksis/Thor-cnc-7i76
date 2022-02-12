@@ -132,7 +132,7 @@ net y-enable     => hm2_7i76e.0.stepgen.03.enable
 
 # ---setup home / limit switch signals---
 
-net y-home-sw     =>  joint.1.home-sw-in
+net home-y     =>  joint.1.home-sw-in
 net y-neg-limit     =>  joint.1.neg-lim-sw-in
 net y-pos-limit     =>  joint.1.pos-lim-sw-in
 
@@ -187,7 +187,7 @@ net y2-enable     => hm2_7i76e.0.stepgen.02.enable
 
 # ---setup home / limit switch signals---
 
-net y2-home-sw     =>  joint.2.home-sw-in
+net home-y2     =>  joint.2.home-sw-in
 net y2-neg-limit     =>  joint.2.neg-lim-sw-in
 net y2-pos-limit     =>  joint.2.pos-lim-sw-in
 
