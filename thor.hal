@@ -238,13 +238,6 @@ net home-z     =>  joint.3.home-sw-in
 net z-neg-limit    =>  joint.3.neg-lim-sw-in
 net z-pos-limit     =>  joint.3.pos-lim-sw-in
 
-
-
-
-#******************************
-# connect miscellaneous signals
-#******************************
-
 #  ---HALUI signals---
 
 net axis-select-x  halui.axis.x.select

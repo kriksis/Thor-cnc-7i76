@@ -1,3 +1,4 @@
+# Using M codes for cooland and flood to control air valve
 # external output signals
 loadrt siggen
 addf siggen.0.update servo-thread
