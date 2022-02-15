@@ -7,31 +7,13 @@
 # AI 02
 # AI 03
 net home-x <= hm2_7i76e.0.7i76.0.0.input-04-not  # DI-04
-net home-y2 <= hm2_7i76e.0.7i76.0.0.input-05-not  # DI-05
-net home-y <= hm2_7i76e.0.7i76.0.0.input-06-not # DI-06
+net home-y2 <= hm2_7i76e.0.7i76.0.0.input-05-not # DI-05
+net home-y <= hm2_7i76e.0.7i76.0.0.input-06-not  # DI-06
 net home-z <= hm2_7i76e.0.7i76.0.0.input-07-not  # DI-07
-# DI 05
-# DI 06
-# DI 07
-# DI 05
-# DI 06
-# DI 07
-# DI 08
-# DI 09
+net atc-sen-tool-loaded <= hm2_7i76e.0.7i76.0.0.input-08   # DI 08 / Jianken Spindle Sensor 11
+net atc-sen-drawbar-loose <= hm2_7i76e.0.7i76.0.0.input-09 # DI 09 / Jianken Spindle Sensor 22
 # DI 10
-# --- Jianken Spindle Sensor 1 ---
-# Mapping sensor 1 in ATC spindle: signal high = tool clamped
-#net spindle_tool     <=  hm2_7i76e.0.7i76.0.0.input-10 motion.digital-in-00
 # DI 11
-# --- Jianken Spindle Sensor 2 ---
-# Mapping sensor 2 in ATC spindle: signal high = draw bar down (ready to receive tool)
-#net spindle_drawbar     <=  hm2_7i76e.0.7i76.0.0.input-11 motion.digital-in-01
-
-# SIGNAL TABLE
-# 11 low 22 low = drawbar closed, no tool
-# 11 low 22 high = drawbar closed, tool inserted
-# 11 high, 22 low = drawbar open - tool status unknown
-
 # DI 12
 # DI 13
 # DI 14
@@ -40,9 +22,9 @@ net home-z <= hm2_7i76e.0.7i76.0.0.input-07-not  # DI-07
 # DI 17
 # DI 18
 # DI 19
-#net x_alarm => joint.0.amp-fault-in <= hm2_7i76e.0.7i76.0.0.input-20  # DI 20
+net x_alarm => joint.0.amp-fault-in <= hm2_7i76e.0.7i76.0.0.input-20  # DI 20
 net y_alarm => joint.1.amp-fault-in <= hm2_7i76e.0.7i76.0.0.input-21  # DI 21
-#net y2_alarm => joint.2.amp-fault-in <= hm2_7i76e.0.7i76.0.0.input-22 # DI 22
+net y2_alarm => joint.2.amp-fault-in <= hm2_7i76e.0.7i76.0.0.input-22 # DI 22
 net z_alarm => joint.3.amp-fault-in <= hm2_7i76e.0.7i76.0.0.input-23  # DI 23
 net atc_manual_toogle_button <= hm2_7i76e.0.7i76.0.0.input-24         # DI 24
 # --- AIR PRESSURE SENSOR 6 bar ---
