@@ -6,8 +6,8 @@
 # AI 01
 # AI 02
 # AI 03
-#net home-x <= hm2_7i76e.0.7i76.0.0.input-04-not  # DI-04
-#net home-y2 <= hm2_7i76e.0.7i76.0.0.input-05-not  # DI-05
+net home-x <= hm2_7i76e.0.7i76.0.0.input-04-not  # DI-04
+net home-y2 <= hm2_7i76e.0.7i76.0.0.input-05-not  # DI-05
 net home-y <= hm2_7i76e.0.7i76.0.0.input-06-not # DI-06
 net home-z <= hm2_7i76e.0.7i76.0.0.input-07-not  # DI-07
 # DI 05
