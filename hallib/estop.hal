@@ -1,0 +1,40 @@
+loadrt estop_latch count=3
+addf estop-latch.0 servo-thread
+addf estop-latch.1 servo-thread
+addf estop-latch.2 servo-thread
+
+# --- ESTOP CHAIN STARTS ---
+net latch-reset iocontrol.0.user-request-enable 
+net latch-ok-in iocontrol.0.user-enable-out 
+
+net latch-ok-in => estop-latch.0.ok-in
+net latch0-out <= estop-latch.0.ok-out 
+net latch0-out => estop-latch.1.ok-in
+net latch1-out <= estop-latch.1.ok-out 
+net latch1-out => estop-latch.2.ok-in
+
+net latch-reset => estop-latch.0.reset
+net latch-reset => estop-latch.1.reset
+net latch-reset => estop-latch.2.reset
+net latch-out iocontrol.0.emc-enable-in <= estop-latch.2.ok-out
+net estop-out estop-latch.2.fault-out
+
+# --- ELECTRICAL CABINET ESTOP ---
+net external-estop <= hm2_7i76e.0.7i76.0.0.input-10-not
+net external-estop => estop-latch.0.fault-in
+
+# --- PENDANT ESTOP SWITCH ---
+net pendant-estop <=  hm2_7i76e.0.7i76.0.0.input-11-not
+net pendant-estop => estop-latch.1.fault-in 
+
+# --- TABLE ESTOP ---
+net table-estop <= hm2_7i76e.0.7i76.0.0.input-12-not
+net table-estop => estop-latch.2.fault-in
+
+# --- E-STOP STEPPER DRIVE DISABLE ---
+#net estop-out hm2_7i76e.0.7i76.0.0.output-05
+
+# --- E-STOP RED WARNING LIGHT ---
+#net estop-out hm2_7i76e.0.7i76.0.0.output-00
+
+# --- ESTOP CHAIN ENDS ---
