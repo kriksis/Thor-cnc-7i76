@@ -15,8 +15,8 @@ net atc-sen-drawbar-loose <= hm2_7i76e.0.7i76.0.0.input-09 # DI 09 / Jianken Spi
 # external-estop <= hm2_7i76e.0.7i76.0.0.input-10-not      # DI 10 / Look in estop.hal
 #net pendant-estop <=  hm2_7i76e.0.7i76.0.0.input-11-not   # DI 11 / Look in estop.hal
 #net table-estop <= hm2_7i76e.0.7i76.0.0.input-12-not      # DI 12 / Look in estop.hal
-# DI 13
-# DI 14
+net probe-in-z-3d <= hm2_7i76e.0.7i76.0.0.input-13-not     # DI 13
+net probe-in-z-3d-error <= hm2_7i76e.0.7i76.0.0.input-10   # DI 13
 # DI 15
 # DI 16
 # DI 17

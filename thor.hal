@@ -339,3 +339,6 @@ net spindle-index-enable      <=>  spindle.0.index-enable
 sets spindle-at-speed true
 
 #net spindle-on => hm2_7i76e.0.7i76.0.0.spinena
+
+
+#net signal-name motion.digital-in-00 <= parport.0.pin10-in
