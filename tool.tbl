@@ -1,4 +1,5 @@
-T0 P0 ;
-T1 P1 ;
-T2 P2 ;
-T3 P3 ;
+;Tool  Pocket Z Offset     Diameter     Remark
+T1     P1     Z+68.747090  D+0.000000   ; 
+T2     P2     Z+68.748082  D+0.000000   ; 
+T3     P3     Z+0.000000   D+0.000000   ; 
+T99    P0     Z+103.855000 D+2.000000   ; Probe
