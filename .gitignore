@@ -2,3 +2,4 @@ linuxcnc.var
 linuxcnc.var.bak
 backups/
 thor_cnc.code-workspace
+.vcp_persistent_data.pickle
