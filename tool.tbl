@@ -1,5 +1,4 @@
-;Tool  Pocket Z Offset     Diameter     Remark
-T1     P1     Z+68.747090  D+0.000000   ; 
-T2     P2     Z+68.748082  D+0.000000   ; 
-T3     P3     Z+0.000000   D+0.000000   ; 
-T99    P0     Z+103.855000 D+2.000000   ; Probe
+T1 P1 Z+121.384333 ; Engrave tip
+T2 P2 Z+121.394293 ; 
+T3 P3 ; 
+T99 P0 D2.000000 Z+156.284333 ; Probe
