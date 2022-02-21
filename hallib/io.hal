@@ -12,11 +12,11 @@ net home-y <= hm2_7i76e.0.7i76.0.0.input-06-not  # DI-06
 net home-z <= hm2_7i76e.0.7i76.0.0.input-07-not  # DI-07
 net atc-sen-tool-loaded <= hm2_7i76e.0.7i76.0.0.input-08   # DI 08 / Jianken Spindle Sensor 11
 net atc-sen-drawbar-loose <= hm2_7i76e.0.7i76.0.0.input-09 # DI 09 / Jianken Spindle Sensor 22
-# external-estop <= hm2_7i76e.0.7i76.0.0.input-10-not      # DI 10 / Look in estop.hal
-#net pendant-estop <=  hm2_7i76e.0.7i76.0.0.input-11-not   # DI 11 / Look in estop.hal
-#net table-estop <= hm2_7i76e.0.7i76.0.0.input-12-not      # DI 12 / Look in estop.hal
+net external-estop <= hm2_7i76e.0.7i76.0.0.input-10-not    # DI 10 / Look in estop.hal
+net pendant-estop <=  hm2_7i76e.0.7i76.0.0.input-11-not    # DI 11 / Look in estop.hal
+net table-estop <= hm2_7i76e.0.7i76.0.0.input-12-not       # DI 12 / Look in estop.hal
 net probe-in-z-3d <= hm2_7i76e.0.7i76.0.0.input-13-not     # DI 13
-net probe-in-z-3d-error <= hm2_7i76e.0.7i76.0.0.input-10   # DI 13
+net probe-in-z-3d-error <= hm2_7i76e.0.7i76.0.0.input-10   # DI 14
 # DI 15
 # DI 16
 # DI 17

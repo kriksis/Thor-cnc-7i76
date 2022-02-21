@@ -36,5 +36,3 @@ net table-estop => estop-latch.2.fault-in
 
 # --- E-STOP RED WARNING LIGHT ---
 #net estop-out hm2_7i76e.0.7i76.0.0.output-00
-
-# --- ESTOP CHAIN ENDS ---
