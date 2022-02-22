@@ -12,9 +12,9 @@ net home-y <= hm2_7i76e.0.7i76.0.0.input-06-not  # DI-06
 net home-z <= hm2_7i76e.0.7i76.0.0.input-07-not  # DI-07
 net atc-sen-tool-loaded <= hm2_7i76e.0.7i76.0.0.input-08   # DI 08 / Jianken Spindle Sensor 11
 net atc-sen-drawbar-loose <= hm2_7i76e.0.7i76.0.0.input-09 # DI 09 / Jianken Spindle Sensor 22
-net external-estop <= hm2_7i76e.0.7i76.0.0.input-10-not    # DI 10 / Look in estop.hal
-net pendant-estop <=  hm2_7i76e.0.7i76.0.0.input-11-not    # DI 11 / Look in estop.hal
-net table-estop <= hm2_7i76e.0.7i76.0.0.input-12-not       # DI 12 / Look in estop.hal
+#net external-estop <= hm2_7i76e.0.7i76.0.0.input-10-not    # DI 10 / Look in estop.hal
+#net pendant-estop <=  hm2_7i76e.0.7i76.0.0.input-11-not    # DI 11 / Look in estop.hal
+#net table-estop <= hm2_7i76e.0.7i76.0.0.input-12-not       # DI 12 / Look in estop.hal
 net probe-in-z-3d <= hm2_7i76e.0.7i76.0.0.input-13-not     # DI 13
 net probe-in-z-3d-error <= hm2_7i76e.0.7i76.0.0.input-10   # DI 14
 # DI 15
@@ -55,10 +55,10 @@ net atc_manual_toogle_button <= hm2_7i76e.0.7i76.0.0.input-24         # DI 24
 # DO 06
 # DO 07
 net coolant => hm2_7i76e.0.7i76.0.0.output-08            # DO 08 - Flood / Mist Air Valve
-net spindle-enable-ok => hm2_7i76e.0.7i76.0.0.output-09  # DO 09 - Air Sealed 
+net spindle-enable-ok  => hm2_7i76e.0.7i76.0.0.output-09  # DO 09 - Air Sealed 
 net atc_air_return => hm2_7i76e.0.7i76.0.0.output-10     # DO 10 - Air Return
 net atc_drawbar_loose => hm2_7i76e.0.7i76.0.0.output-11  # DO 11 - Air Inlet + Dust Removal Valve
-net spindle-enable => hm2_7i76e.0.7i76.0.0.output-12     # DO 12 - Water pump
+net spindle-enable-ok  => hm2_7i76e.0.7i76.0.0.output-12     # DO 12 - Water pump
 # DO 13
 # DO 14
 # DO 15
