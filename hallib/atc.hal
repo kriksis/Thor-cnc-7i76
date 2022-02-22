@@ -2,3 +2,15 @@
 addf toggle.0 servo-thread
 net atc_manual_toogle_button toggle.0.in <= hm2_7i76e.0.7i76.0.0.input-24
 net atc_drawbar_loose toggle.0.out => hm2_7i76e.0.7i76.0.0.output-11
+
+# inverting atc-manual-button-toogle signal to use it in oneshot 
+addf not.0 servo-thread
+net atc_drawbar_loose => not.0.in
+net atc_drawbar_loose_n <= not.0.out
+
+# creating one shot to enable atc-sol-air-return for 3 sec
+addf oneshot.0 servo-thread
+setp oneshot.0.width 3
+net atc_drawbar_loose_n => oneshot.0.in
+net atc_air_return <= oneshot.0.out
+net atc_drawbar_loose => oneshot.0.reset

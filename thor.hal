@@ -8,7 +8,9 @@ setp    hm2_7i76e.0.watchdog.timeout_ns 5000000
 loadrt pid names=pid.x,pid.y,pid.y2,pid.z,pid.s
 
 loadrt toggle count=1
-loadrt lut5 count=6
+loadrt oneshot count=1
+loadrt not count=1
+loadrt lut5 count=2
 
 addf hm2_7i76e.0.read          servo-thread
 addf motion-command-handler   servo-thread
