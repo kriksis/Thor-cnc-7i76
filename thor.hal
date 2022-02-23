@@ -7,10 +7,14 @@ loadrt hm2_eth board_ip="10.10.10.10" config=" num_encoders=1 num_pwmgens=0 num_
 setp    hm2_7i76e.0.watchdog.timeout_ns 5000000
 loadrt pid names=pid.x,pid.y,pid.y2,pid.z,pid.s
 
+loadrt abs names=abs.spindle
+loadrt lowpass names=lowpass.spindle
+
+
 loadrt toggle count=1
 loadrt oneshot count=1
 loadrt not count=1
-loadrt lut5 count=2
+loadrt lut5 count=3
 
 addf hm2_7i76e.0.read          servo-thread
 addf motion-command-handler   servo-thread
@@ -23,6 +27,10 @@ addf pid.s.do-pid-calcs       servo-thread
 addf hm2_7i76e.0.write         servo-thread
 setp hm2_7i76e.0.dpll.01.timer-us -50
 setp hm2_7i76e.0.stepgen.timer-number 1
+
+addf abs.spindle              servo-thread
+addf lowpass.spindle          servo-thread
+
 
 #*******************
 #  AXIS X JOINT 0
@@ -286,7 +294,6 @@ net tool-change-confirmed   iocontrol.0.tool-changed      <=  hal_manualtoolchan
 net tool-number             iocontrol.0.tool-prep-number  =>  hal_manualtoolchange.number
 net tool-prepare-loopback   iocontrol.0.tool-prepare      =>  iocontrol.0.tool-prepared
 
-#net spindle-on => hm2_7i76e.0.7i76.0.0.spinena
 
 
 #net signal-name motion.digital-in-00 <= parport.0.pin10-in
