@@ -1,0 +1,49 @@
+; manual toolchange with automatic pneumatic 3d probe interaction
+
+o<manual_tool_change> sub
+
+#<mist> = #<_mist>
+#<flood> = #<_flood>
+;#<tool_diameter> = #<_zzz>
+
+o10 if [#<selected_tool> eq #<tool_in_spindle>]
+  (msg, selected tool already in spindle.)
+  o<manual_tool_change> endsub[1]
+  M2
+o10 endif
+
+; moves back in the 3d probe
+;M65 P#<_ini[3dprobe]pneumatic_pin>
+
+; deactivate coolant
+o<deactivate> call
+
+M6 T#<selected_tool>
+G43
+
+
+;#<fast_probe_fr> = #1    			200		(set from probe screen fast probe feed rate)
+;#<slow_probe_fr> = #2    			5		(set from probe screen slow probe feedrate)
+;#<z_max_travel> = #3    			100		(max z distance the tool travels before erroring out if not contact is made)
+;#<xy_max_travel> = #4    			1		(max xy distance the tool travels before erroring out if not contact is made)
+;#<spindle_zero_height> = #5    	69.3	(G53 distance from home to spindle nose triggering point on touch plate)
+;#<retract_distance> = #6    		1		(distance the tool retracts after making contact during fast feed mode)
+
+;#<tool_diameter_probe_mode> = #8   0		(activates the tool diameter probe subroutine section)
+;#<tool_diameter_offset_mode> = #9  0		(activates the tool diameter offset position for probe subroutine section)
+;#<tool_diameter> = #10    			0		(current tool's diameter used for offseting probe position in x axis)
+
+
+
+o<tool_touch_off> call [70.0] [5.0] [50.0] [1.0] [230.4] [1.0] [0.0000] [0.0] [0.0] [0.0]
+
+o20 if [#<selected_tool> eq #<_ini[probe]tool_number>]
+  ; moves out the 3d probe 
+  ;M64 P#<_ini[3dprobe]pneumatic_pin>
+  o<restore> call [#<_metric>] [#<_absolute>] [#<_feed>] [0] [0]
+o20 else
+  o<restore> call [#<_metric>] [#<_absolute>] [#<_feed>] [#<mist>] [#<flood>]
+o20 endif
+
+o<manual_tool_change> endsub [1]
+M2

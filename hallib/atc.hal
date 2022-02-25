@@ -1,4 +1,38 @@
-#Toggle on/off manual button
+# checking is it safe to relase the drawbar and releasing frawbar
+addf lut5.0 servo-thread
+setp lut5.0.function 0x40
+net  spindle-enable => lut5.0.in-0        #0
+net  machine-is-enabled => lut5.0.in-1     #1
+net  atc-drawbar-loose => lut5.0.in-2      #1
+net  atc-sol-drawbar-loose lut5.0.out      #out
+
+# adding toogle button for manual drawbar release 
 addf toggle.0 servo-thread
-net atc_manual_toogle_button toggle.0.in <= hm2_7i76e.0.7i76.0.0.input-24
-net atc_drawbar_loose toggle.0.out => hm2_7i76e.0.7i76.0.0.output-11
+net atc-drawbar-loose-manual-button-ok => toggle.0.in
+net atc-drawbar-loose-manual-button-toogle <= toggle.0.out
+
+# combaining automatic and manual drwbar relese
+addf or2.0 servo-thread
+net atc-drawbar-loose-manual-button-toogle => or2.0.in0
+net atc-drawbar-loose-automatic => or2.0.in1
+net atc-drawbar-loose <= or2.0.out
+
+# disabling buton in case if spindle ir running or automatic relese is requested
+addf lut5.1 servo-thread
+setp lut5.1.function 0x10
+net  spindle-enable => lut5.1.in-0                       #0
+net  atc-drawbar-loose-automatic =>  lut5.1.in-1          #0
+net  atc-drawbar-loose-manual-button =>  lut5.1.in-2      #1
+net  atc-drawbar-loose-manual-button-ok <= lut5.1.out     #out
+
+# inverting atc-manual-button-toogle signal to use it in oneshot 
+addf not.0 servo-thread
+net atc-drawbar-loose => not.0.in
+net atc-drawbar-loose_n <= not.0.out
+
+# creating one shot to enable atc-sol-air-return for 3 sec
+addf oneshot.0 servo-thread
+setp oneshot.0.width 3
+net atc-drawbar-loose_n => oneshot.0.in
+net atc-sol-air-return <= oneshot.0.out
+net atc-drawbar-loose => oneshot.0.reset
