@@ -3,3 +3,5 @@ linuxcnc.var.bak
 backups/
 thor_cnc.code-workspace
 .vcp_persistent_data.pickle
+python/stdglue.pyc
+python/remap.pyc

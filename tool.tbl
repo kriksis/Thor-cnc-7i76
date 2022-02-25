@@ -1,4 +1,5 @@
-T1 P1 Z+121.384333 ; Engrave tip
-T2 P2 Z+121.394293 ; 
+T1 P1 Z+58.253500 ; Face mill
+T2 P2 Z+73.965583 ; 6mm Sorotec 
 T3 P3 ; 
-T99 P0 D2.000000 Z+156.284333 ; Probe
+T99 P0 D2.000000 Z+103.626083 ; Probe
+T100 P0 ; New Tool

@@ -112,7 +112,7 @@ setp stepsize-1 	5
 setp stepsize-2 	1
 setp stepsize-3 	10
 setp stepsize-4 	0.1
-setp stepsize-5 	0
+setp stepsize-5 	0.01
 setp stepsize-6 	0
 setp stepsize-7 	0
 setp stepsize-8 	0
