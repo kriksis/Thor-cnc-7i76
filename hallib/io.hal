@@ -26,7 +26,7 @@ net x_alarm => joint.0.amp-fault-in <= hm2_7i76e.0.7i76.0.0.input-20  # DI 20
 net y_alarm => joint.1.amp-fault-in <= hm2_7i76e.0.7i76.0.0.input-21  # DI 21
 net y2_alarm => joint.2.amp-fault-in <= hm2_7i76e.0.7i76.0.0.input-22 # DI 22
 net z_alarm => joint.3.amp-fault-in <= hm2_7i76e.0.7i76.0.0.input-23  # DI 23
-net atc_manual_toogle_button <= hm2_7i76e.0.7i76.0.0.input-24         # DI 24
+net atc-drawbar-loose-manual-button <= hm2_7i76e.0.7i76.0.0.input-24  # DI 24
 # --- AIR PRESSURE SENSOR 6 bar ---
 # Mapping Festo 527467 sensor in 6bar airline to input 16 (high when ok; invert to deal with message)
 #net airpressure    <=  hm2_7i76e.0.7i76.0.0.input-24-not
@@ -54,11 +54,11 @@ net atc_manual_toogle_button <= hm2_7i76e.0.7i76.0.0.input-24         # DI 24
 # DO 05
 # DO 06
 # DO 07
-net coolant => hm2_7i76e.0.7i76.0.0.output-08             # DO 08 - Flood / Mist Air Valve
-net spindle-enable-ok  => hm2_7i76e.0.7i76.0.0.output-09  # DO 09 - Air Sealed 
-net atc_air_return => hm2_7i76e.0.7i76.0.0.output-10      # DO 10 - Air Return
-net atc_drawbar_loose => hm2_7i76e.0.7i76.0.0.output-11   # DO 11 - Air Inlet + Dust Removal Valve
-net spindle-enable-ok  => hm2_7i76e.0.7i76.0.0.output-12  # DO 12 - Water pump
+net coolant => hm2_7i76e.0.7i76.0.0.output-08               # DO 08 - Flood / Mist Air Valve
+net spindle-enable-ok  => hm2_7i76e.0.7i76.0.0.output-09    # DO 09 - Air Sealed 
+net atc-sol-air-return => hm2_7i76e.0.7i76.0.0.output-10    # DO 10 - Air Return
+net atc-sol-drawbar-loose => hm2_7i76e.0.7i76.0.0.output-11 # DO 11 - Air Inlet + Dust Removal Valve
+net spindle-enable-ok  => hm2_7i76e.0.7i76.0.0.output-12    # DO 12 - Water pump
 # DO 13
 # DO 14
 # DO 15

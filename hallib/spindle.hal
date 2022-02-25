@@ -1,7 +1,3 @@
-#*******************
-#  SPINDLE
-#*******************
-
 setp   pid.s.Pgain     [SPINDLE_9]P
 setp   pid.s.Igain     [SPINDLE_9]I
 setp   pid.s.Dgain     [SPINDLE_9]D
@@ -42,18 +38,11 @@ net spindle-output      => hm2_7i76e.0.7i76.0.0.spinout
 net spindle-enable      => hm2_7i76e.0.7i76.0.0.spinena
 net spindle-ccw         => hm2_7i76e.0.7i76.0.0.spindir
 
-
-
-# ---Setup spindle at speed signals---
-
 sets spindle-at-speed true
-
-#net spindle-on => hm2_7i76e.0.7i76.0.0.spinena
-
 
 #Turn on cooling and air sealed when spindle starts
 addf lut5.2 servo-thread
 setp lut5.2.function 0x4
-net  atc_drawbar_loose  => lut5.2.in-0    #0
+net  atc-sol-drawbar-loose  => lut5.2.in-0    #0
 net  spindle-enable         => lut5.2.in-1    #1
 net  spindle-enable-ok      <= lut5.2.out     #out
