@@ -281,11 +281,6 @@ net probe-in-z-3d     =>  motion.probe-input
 net in-position               <=  motion.in-position
 net machine-is-enabled        <=  motion.motion-enabled
 
-
-net estop-out     <=  iocontrol.0.user-enable-out
-net estop-out     =>  iocontrol.0.emc-enable-in
-
-
 #  ---manual tool change signals---
 
 loadusr -W hal_manualtoolchange
