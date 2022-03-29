@@ -1,6 +1,11 @@
 ;Tool  Pocket Z Offset     Diameter     Remark
 T1     P1     Z+58.303463  D+38.100000  ; Face mill
-T2     P2     Z+76.098169  D+6.350000   ; 1/4 straight 2 flute
-T10    P10    Z+72.508250  D+3.000000   ; 3mm drill / Needs measure
+T2     P2     Z+66.652335  D+6.000000   ; 6mm straight
+T3     P3     Z+69.152002  D+6.000000   ; 6mm compression
+T5     P5     Z+79.798835  D+6.000000   ; 6mm downcut
+T10    P10    Z+69.866502  D+3.000000   ; 3mm drill
+T11    P11    Z+55.175835  D+3.180000   ; V bit ball
+T12    P12    Z+66.870002  D+0.000000   ; 45 deg V bit
+T20    P20    Z+60.322502  D+4.000000   ; 4mm Alu
+T26    P26    Z+61.280168  D+1.000000   ; 1mm downcut
 T99    P99    Z+103.848185 D+2.000000   ; Probe
-T100   P100   Z+0.000000   D+0.000000   ; New Tool
