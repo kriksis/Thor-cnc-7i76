@@ -69,7 +69,7 @@ net spindle-counts vc-p4s.spindle-counts => halui.spindle.0.override.counts
 net spindle.value halui.spindle.0.override.value => vc-p4s.spindle-override.value
 
 # 10---PROGRAM
-net program.is-idle    halui.program.is-idle    =>  vc-p4s.program.is-idle
+#net program.is-idle    halui.program.is-idle    =>  vc-p4s.program.is-idle
 net program.is-paused  halui.program.is-paused  =>  vc-p4s.program.is-paused
 net program.is-running halui.program.is-running =>  vc-p4s.program.is-running
 
