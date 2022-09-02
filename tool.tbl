@@ -1,21 +1,22 @@
-T1 P1 D38.100000 Z+58.303463 ; Face mill
-T2 P2 D6.000000 Z+66.178668 ; 6mm straight
-T3 P3 D6.000000 Z+69.152002 ; 6mm compression
-T4 P4 D1.500000 Z+52.206793 ; 1.5mm down
-T5 P5 D6.000000 Z+79.798835 ; 6mm downcut
-T6 P6 D4.000000 Z+59.750835 ; 4mm compression
-T7 P7 D3.000000 Z+57.247335 ; 3mm down
-T8 P8 D4.000000 Z+61.877002 ; 4mm upcut
-T9 P9 D0.400000 Z+48.707002 ; 0.4 mm
-T10 P10 D3.000000 Z+69.866502 ; 3mm drill
-T11 P11 D6.200000 Z+56.368335 ; 90 V bit
-T13 P13 D1.500000 Z+54.371002 ; 1.5mm drill
-T14 P14 Z+69.696002 ; 1/8 ball
-T15 P15 D2.000000 Z+59.112168 ; 2mm ball
-T16 P16 D4.000000 Z+62.733668 ; 4mm Ball
-T20 P20 D4.000000 Z+54.643002 ; 4mm Alu / remesure
-T21 P21 D4.000000 Z+56.363502 ; 4mm Plast
-T26 P26 D1.000000 Z+61.280168 ; 1mm downcut
-T27 P27 Z+62.645835 ; 45 deg V bit
-T99 P99 D2.000000 Z+103.848185 ; Probe
-T12 P12 D8.000000 Z+68.440835 ; 8mm straight
+;Tool  Pocket Z Offset     Diameter     Remark
+T1     P1     Z+58.303463  D+38.100000  ; Face mill
+T2     P2     Z+66.178668  D+6.000000   ; 6mm straight
+T3     P3     Z+69.152002  D+6.000000   ; 6mm compression
+T4     P4     Z+51.583168  D+1.500000   ; 36 deg v bit
+T5     P5     Z+79.798835  D+6.000000   ; 6mm downcut
+T6     P6     Z+59.750835  D+4.000000   ; 4mm compression
+T7     P7     Z+57.247335  D+3.000000   ; 3mm down
+T8     P8     Z+61.877002  D+4.000000   ; 4mm upcut
+T9     P9     Z+48.707002  D+0.400000   ; 0.4 mm
+T10    P10    Z+69.866502  D+3.000000   ; 3mm drill
+T11    P11    Z+56.368335  D+6.200000   ; 90 V bit
+T12    P12    Z+68.440835  D+8.000000   ; 8mm straight
+T13    P13    Z+63.241668  D+5.000000   ; 5mm drill
+T14    P14    Z+69.696002  D+0.000000   ; 1/8 ball
+T15    P15    Z+59.112168  D+2.000000   ; 2mm ball
+T16    P16    Z+62.733668  D+4.000000   ; 4mm Ball
+T20    P20    Z+54.643002  D+4.000000   ; 4mm Alu / remesure
+T21    P21    Z+56.363502  D+4.000000   ; 4mm Plast
+T26    P26    Z+61.280168  D+1.000000   ; 1mm downcut
+T27    P27    Z+62.645835  D+0.000000   ; 45 deg V bit
+T99    P99    Z+103.848185 D+2.000000   ; Probe
