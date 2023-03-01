@@ -2,7 +2,7 @@
 
 ## Features
 
-- Runs on LinuxCNC 2.9pre1 with Debian 11
+- Runs on LinuxCNC 2.9pre0 with Debian 11
 - Based on [7i76E mesa](https://eusurplus.com/index.php?route=product/product&path=59_62&product_id=50) card
 - [Uses Probe_basic](https://github.com/kcjengr/probe_basic) GUI 
 - [VistaCNC pendant](http://www.vistacnc.com/)
