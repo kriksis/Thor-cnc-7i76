@@ -22,7 +22,7 @@ net jog-counts vc-p4s.jog-counts => joint.2.jog-counts  axis.z.jog-counts
 net jog.0.cont-plus  vc-p4s.jog.0.plus  => halui.axis.x.plus
 net jog.0.cont-minus vc-p4s.jog.0.minus => halui.axis.x.minus
 net jog.1.cont-plus  vc-p4s.jog.1.plus  => halui.axis.y.plus
-net jog.1.cont-mius vc-p4s.jog.1.minus => halui.axis.y.minus
+net jog.1.cont-minus vc-p4s.jog.1.minus => halui.axis.y.minus
 net jog.2.cont-plus  vc-p4s.jog.2.plus  => halui.axis.z.plus
 net jog.2.cont-minus vc-p4s.jog.2.minus => halui.axis.z.minus
 
