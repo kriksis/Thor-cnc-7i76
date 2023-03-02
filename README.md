@@ -1,3 +1,4 @@
+![20220304_113206221](https://user-images.githubusercontent.com/546095/222375172-3bf5bf47-8bff-4c32-9e3a-b88ee37f7983.jpg)
 ## Linuxcnc 2.9 config & machine setup
 
 ## Features
