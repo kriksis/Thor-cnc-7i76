@@ -1,5 +1,3 @@
-# Using LinuxCNC version:  2.8.2
-
 loadrt [KINS]KINEMATICS
 loadrt [EMCMOT]EMCMOT servo_period_nsec=[EMCMOT]SERVO_PERIOD num_joints=[KINS]JOINTS num_dio=30 num_aio=30
 loadrt hostmot2
@@ -30,7 +28,6 @@ setp hm2_7i76e.0.stepgen.timer-number 1
 
 addf abs.spindle              servo-thread
 addf lowpass.spindle          servo-thread
-
 
 #*******************
 #  AXIS X JOINT 0
@@ -134,9 +131,9 @@ net y-enable     => hm2_7i76e.0.stepgen.03.enable
 
 # ---setup home / limit switch signals---
 
-net home-y     =>  joint.1.home-sw-in
-net y-neg-limit     =>  joint.1.neg-lim-sw-in
-net y-pos-limit     =>  joint.1.pos-lim-sw-in
+net home-y      => joint.1.home-sw-in
+net y-neg-limit => joint.1.neg-lim-sw-in
+net y-pos-limit => joint.1.pos-lim-sw-in
 
 #*******************
 #  Tandem AXIS Y2 JOINT 2
@@ -189,9 +186,9 @@ net y2-enable     => hm2_7i76e.0.stepgen.02.enable
 
 # ---setup home / limit switch signals---
 
-net home-y2     =>  joint.2.home-sw-in
-net y2-neg-limit     =>  joint.2.neg-lim-sw-in
-net y2-pos-limit     =>  joint.2.pos-lim-sw-in
+net home-y2      => joint.2.home-sw-in
+net y2-neg-limit => joint.2.neg-lim-sw-in
+net y2-pos-limit => joint.2.pos-lim-sw-in
 
 #*******************
 #  AXIS Z JOINT 3
@@ -242,9 +239,9 @@ net z-enable     => hm2_7i76e.0.stepgen.01.enable
 
 # ---setup home / limit switch signals---
 
-net home-z     =>  joint.3.home-sw-in
-net z-neg-limit    =>  joint.3.neg-lim-sw-in
-net z-pos-limit     =>  joint.3.pos-lim-sw-in
+net home-z      => joint.3.home-sw-in
+net z-neg-limit => joint.3.neg-lim-sw-in
+net z-pos-limit => joint.3.pos-lim-sw-in
 
 #  ---HALUI signals---
 
@@ -288,7 +285,5 @@ net tool-change-request     iocontrol.0.tool-change       =>  hal_manualtoolchan
 net tool-change-confirmed   iocontrol.0.tool-changed      <=  hal_manualtoolchange.changed
 net tool-number             iocontrol.0.tool-prep-number  =>  hal_manualtoolchange.number
 net tool-prepare-loopback   iocontrol.0.tool-prepare      =>  iocontrol.0.tool-prepared
-
-
 
 #net signal-name motion.digital-in-00 <= parport.0.pin10-in
