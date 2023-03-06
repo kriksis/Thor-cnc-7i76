@@ -4,6 +4,12 @@ windows:
     kwargs:
       confirm_exit: true
 
+data_plugins:
+  tooltable:
+    provider: qtpyvcp.plugins.tool_table:ToolTable
+    kwargs:
+        columns: TXYZDR
+        
 settings:
 
   # VTK backplot view settings
@@ -21,7 +27,7 @@ settings:
     default_value: false
 
   backplot.show-machine-bounds:
-    default_value: false
+    default_value: true
 
   backplot.show-machine-labels:
     default_value: false
@@ -38,4 +44,3 @@ settings:
 
   backplot.multitool-colors:
     default_value: True
-

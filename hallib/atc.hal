@@ -1,4 +1,4 @@
-# checking is it safe to relase the drawbar and releasing frawbar
+# checking is it safe to relase the drawbar and releasing drawbar
 addf lut5.0 servo-thread
 setp lut5.0.function 0x40
 net  spindle-enable => lut5.0.in-0        #0
