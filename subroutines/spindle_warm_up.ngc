@@ -9,31 +9,37 @@ O<spindle_warm_up> sub
 
 (!!!!  Use at your own risk following your own safety precautions  !!!!)
 
-#<SafeX> =           16        ( Machine ABS X coordinate where spindle can safely warm up )
-#<SafeY> =           25        ( Machine ABS Y coordinate where spindle can safely warm up )
-#<TravelZ> =         -.25      ( machine ABS Z coordinate for travelling, typically near max Z to avoid ever hitting the work )
-
+#<SafeX> = 16     ( Machine ABS X coordinate where spindle can safely warm up )
+#<SafeY> = -25     ( Machine ABS Y coordinate where spindle can safely warm up )
+#<TravelZ> = -5 ( machine ABS Z coordinate for travelling, typically near max Z to avoid ever hitting the work )
+#100=60           (dwell time / sec)
 G90
 G53 G0 Z[#<TravelZ]
 G53 G0 X[#<SafeX>] Y[#<SafeY]
-S8000 M3
-G04 P60
+M3 S4000
+G04 P#100
+S6000
+G04 P#100
+S6000
+G04 P#100
+S8000
+G04 P#100
 S10000
-G04 P60
+G04 P#100
 S12000
-G04 P60
+G04 P#100
 S14000
-G04 P60
+G04 P#100
 S16000
-G04 P60
+G04 P#100
 S18000
-G04 P60
+G04 P#100
 S20000
-G04 P60
+G04 P#100
 S22000
-G04 P60
+G04 P#100
 S24000
-G04 P60
+G04 P#100
 
 M5
 
