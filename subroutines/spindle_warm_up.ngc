@@ -1,0 +1,42 @@
+O<spindle_warm_up> sub
+
+(Macro to warm up the spindle prior to cutting)
+(Input your own "Safe" location for where the spindle can go through this cycle in <_SafeX> and <_SafeY>)
+(Input a safe Z travel height to avoid anything in your workspace with <_TravelZ>)
+(Machine will rapid to your safe travel Z height, and then will rapid to your "safe" location)
+(The code will start the spindle at 8K rpm and increases by 2k every 60 seconds)
+(There aren't any fail safes for making sure you have a tool that can handle the max 24K RPM)
+
+(!!!!  Use at your own risk following your own safety precautions  !!!!)
+
+#<SafeX> =           16        ( Machine ABS X coordinate where spindle can safely warm up )
+#<SafeY> =           25        ( Machine ABS Y coordinate where spindle can safely warm up )
+#<TravelZ> =         -.25      ( machine ABS Z coordinate for travelling, typically near max Z to avoid ever hitting the work )
+
+G90
+G53 G0 Z[#<TravelZ]
+G53 G0 X[#<SafeX>] Y[#<SafeY]
+S8000 M3
+G04 P60
+S10000
+G04 P60
+S12000
+G04 P60
+S14000
+G04 P60
+S16000
+G04 P60
+S18000
+G04 P60
+S20000
+G04 P60
+S22000
+G04 P60
+S24000
+G04 P60
+
+M5
+
+O<spindle_warm_up> endsub
+
+M2
